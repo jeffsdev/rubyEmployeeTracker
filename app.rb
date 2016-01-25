@@ -12,6 +12,19 @@ get('/') do
   erb(:index)
 end
 
+get '/sort_employee' do
+  @employees = Employee.all
+  @divisions = Division.all
+  @sorted_employees = []
+  employees = Employee.all
+  employees.each do |e|
+    if e.division_name == params[:list_id].to_s
+      @sorted_employees.push( e )
+    end
+  end
+  erb :index
+end
+
 post '/add_employee' do
   new_employee_name = params.fetch("new_employee_name")
   if new_employee_name.length > 0

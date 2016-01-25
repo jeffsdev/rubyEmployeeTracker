@@ -13,10 +13,10 @@
               <h5>Division: <%=e.division_name%></h5>
             <%end%>
                 <select id='list_id' name='list_id' type='text'>
+                <option value="">None</option>
                 <% @divisions.each do |d| %>
                   <option value="<%=d.name%>"><%=d.name%></option>
                 <%end%>
-                <option value="">None</option>
               </select>
             <button type="submit" class="btn btn-success" name="button">Set Division</button>
           </form>
@@ -50,4 +50,31 @@
       </form>
     </div>
   </div>
+
+  <div class="col-lg-6">
+    <div class="well">
+
+      <form class="" action="/sort_employee">
+        <select id='list_id' name='list_id' type='text'>
+        <option value="">None</option>
+        <% @divisions.each do |d| %>
+          <option value="<%=d.name%>"><%=d.name%></option>
+        <%end%>
+      </select>
+        <button type="submit" class="btn btn-primary" name="button">Sort By Division</button>
+      </form>
+      <br>
+      <ul>
+        <% if @sorted_employees %>
+          <% @sorted_employees.each do |d| %>
+            <li><%=d.name%></li>
+          <%end%>
+        <% else %>
+            <li>None</li>
+        <%end%>
+      </ul>
+
+    </div>
+  </div>
+
 </div>
