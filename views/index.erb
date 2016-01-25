@@ -12,10 +12,11 @@
             <% else %>
               <h5>Division: <%=e.division_name%></h5>
             <%end%>
-                <select>
+                <select id='list_id' name='list_id' type='text'>
                 <% @divisions.each do |d| %>
                   <option value="<%=d.name%>"><%=d.name%></option>
                 <%end%>
+                <option value="">None</option>
               </select>
               <button type="submit" class="btn btn-success" name="button">Set Division</button>
           </form>

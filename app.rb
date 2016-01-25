@@ -31,6 +31,8 @@ post '/add_division' do
 end
 
 post '/set_employee_division/:id' do
-
+  updating_employee = Employee.find( params[:id] )
+  new_division_name = params[:list_id]
+  updating_employee.update({division_name: new_division_name })
   redirect '/'
 end
