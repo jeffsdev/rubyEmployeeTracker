@@ -1,0 +1,44 @@
+
+<div class="container">
+  <div class="col-lg-6">
+    <label for="">Current Employees</label>
+    <div class="well">
+      <ul>
+        <% @employees.each do |e| %>
+          <li><%= e.name %></li>
+          <form class="" action="/set_employee_division/<%=e.id%>" method="post">
+            <% if e.division_name == "" %>
+              <h5> No division. </h5>
+            <% else %>
+              <h5>Division: <%=e.division_name%></h5>
+            <%end%>
+                <select>
+                <% @divisions.each do |d| %>
+                  <option value="<%=d.name%>"><%=d.name%></option>
+                <%end%>
+              </select>
+              <button type="submit" class="btn btn-success" name="button">Set Division</button>
+          </form>
+        <%end%>
+      </ul>
+      <form class="" action="/add_employee" method="post">
+        <input type="text" name="new_employee_name" value="" placeholder="New Employee Name...">
+        <button type="submit" class="btn btn-primary" name="button">Add Employee</button>
+      </form>
+    </div>
+  </div>
+  <div class="col-lg-6">
+    <label for="">Current Divisions</label>
+    <div class="well">
+      <ul>
+        <% @divisions.each do |d| %>
+          <li><%=d.name%></li>
+        <%end%>
+      </ul>
+      <form class="" action="/add_division" method="post" >
+        <input type="text" name="new_division_name" value="" placeholder="New Division Name...">
+        <button type="submit" class="btn btn-primary" name="button">Add Division</button>
+      </form>
+    </div>
+  </div>
+</div>
