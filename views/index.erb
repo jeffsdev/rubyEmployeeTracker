@@ -18,8 +18,12 @@
                 <%end%>
                 <option value="">None</option>
               </select>
-              <button type="submit" class="btn btn-success" name="button">Set Division</button>
+            <button type="submit" class="btn btn-success" name="button">Set Division</button>
           </form>
+          <form class="" action="/delete_employee/<%=e.id%>" method="post">
+            <input type="hidden" name="_method" value="delete" hidden>
+            <button type="submit" class="btn btn-danger" name="button">Delete</button>
+        </form>
         <%end%>
       </ul>
       <form class="" action="/add_employee" method="post">
@@ -34,6 +38,10 @@
       <ul>
         <% @divisions.each do |d| %>
           <li><%=d.name%></li>
+          <form class="" action="/delete_division/<%= d.id %>" method="post">
+              <input type="hidden" name="_method" value="delete" hidden>
+              <button type="submit" class="btn btn-danger" name="button">Delete</button>
+          </form>
         <%end%>
       </ul>
       <form class="" action="/add_division" method="post" >

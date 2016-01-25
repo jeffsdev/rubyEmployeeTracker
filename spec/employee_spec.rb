@@ -11,6 +11,4 @@ describe(Employee) do
     end
   end
 
-
-
 end

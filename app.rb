@@ -36,3 +36,20 @@ post '/set_employee_division/:id' do
   updating_employee.update({division_name: new_division_name })
   redirect '/'
 end
+
+delete '/delete_division/:id' do
+  delete_division = Division.find(params[:id])
+  Employee.all.each do |emp|
+    if delete_division.name == emp.division_name
+      emp.update({division_name: "" })
+    end
+  end
+  delete_division.delete
+  redirect'/'
+end
+
+delete '/delete_employee/:id' do
+  delete_employee = Employee.find( params[:id] )
+  delete_employee.delete
+  redirect '/'
+end
