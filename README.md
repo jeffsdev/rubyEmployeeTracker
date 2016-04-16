@@ -7,7 +7,7 @@ Mock website that allows a user to manage a employee base through different divi
 Exploring object-oriented Ruby and databases.
 
 ## Technologies Used
-HTML, CSS, Ruby, RSpec, Capybara, Sinatra
+HTML, CSS, Ruby, RSpec, Capybara, Sinatra, PostgreSQL
 
 ## Setup
 Clone repository  
