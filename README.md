@@ -1,18 +1,21 @@
 # Employee Management
 
+#### By Jeff Seymour, Kyle Langley
+
 ## Description
-Mock website that allows a user to manage a employee base through different divisions of the business.
+Mock website that allows a user to manage a employee base through different divisions of the business and track employee projects.  
+Exploring object-oriented Ruby and databases.
 
-## Use
+## Technologies Used
+HTML, CSS, Ruby, RSpec, Capybara, Sinatra
 
-clone `https://github.com/Vawx/employee_management_active_record.git`
-
-terminal `bundle install`
-
-terminal `ruby app.rb`
-
-connect `localhost:4567`
+## Setup
+Clone repository  
+```bundle install```  
+```ruby app.rb```  
+View in browser at localhost:4567
 
 ## License
+Copyright (c) 2016 Jeff Seymour
 
-MIT
+This software is licensed under the MIT license.
